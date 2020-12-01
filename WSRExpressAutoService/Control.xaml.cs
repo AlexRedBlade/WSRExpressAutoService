@@ -22,6 +22,18 @@ namespace WSRExpressAutoService
         public Control()
         {
             InitializeComponent();
+            this.Loaded += Control_Loaded;
+            this.Closed += Control_Closed;
+        }
+        private void Control_Loaded(object sender, RoutedEventArgs e)
+        {
+
+        }
+        private void Control_Closed(object sender, EventArgs e)
+        {
+            MainWindow tw = new MainWindow();
+            tw.Show();
+            this.Close();
         }
     }
 }

@@ -32,28 +32,40 @@ namespace WSRExpressAutoService
         }
         private void MainWindow_Closed(object sender, EventArgs e)
         {
+            Application.Current.Shutdown();
+        }
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
             Clients tc = new Clients();
             tc.Show();
             this.Hide();
         }
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void Button_Click_1(object sender, RoutedEventArgs e)
         {
-
+            Employees te = new Employees();
+            te.Show();
+            this.Hide();
         }
 
         private void Button_Click_2(object sender, RoutedEventArgs e)
         {
-
+            Products tp = new Products();
+            tp.Show();
+            this.Hide();
         }
 
         private void Button_Click_3(object sender, RoutedEventArgs e)
         {
-
+            Services ts = new Services();
+            ts.Show();
+            this.Hide();
+        }
+        private void Button_Click_4(object sender, RoutedEventArgs e)
+        {
+            Control tco = new Control();
+            tco.Show();
+            this.Hide();
         }
     }
 }

@@ -12,6 +12,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Data;
+using System.Data.SqlClient;
 
 namespace WSRExpressAutoService
 {
@@ -28,7 +30,24 @@ namespace WSRExpressAutoService
         }
         private void Clients_Loaded(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Hi!");
+            SqlConnection connection = new SqlConnection(Properties.Settings.Default.AutoServiceConnectionString);
+            try
+            {
+                connection.Open();
+                string cmd = "SELECT * FROM Client"; // Из какой таблицы нужен вывод 
+                SqlCommand createCommand = new SqlCommand(cmd, connection);
+                createCommand.ExecuteNonQuery();
+
+                SqlDataAdapter dataAdp = new SqlDataAdapter(createCommand);
+                DataTable dt = new DataTable("Client");
+                dataAdp.Fill(dt);
+                ClientsGrid.ItemsSource = dt.DefaultView; // Сам вывод 
+                connection.Close();
+            }
+            catch (System.Data.SqlClient.SqlException)
+            {
+                MessageBox.Show("Ooops! Что-то пошло не так!");
+            }       
         }
         private void Clients_Closed(object sender, EventArgs e)
         {
