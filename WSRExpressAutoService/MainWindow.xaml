@@ -5,12 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WSRExpressAutoService"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Главная" Height="450" Width="800">
     <Grid>
         <Button Content="Клиенты" HorizontalAlignment="Left" Margin="271,111,0,0" VerticalAlignment="Top" Width="245" Height="41" Click="Button_Click"/>
         <Button Content="Сотрудники" HorizontalAlignment="Left" Margin="271,162,0,0" VerticalAlignment="Top" Width="245" Height="41" Click="Button_Click_1"/>
         <Button Content="Товары" HorizontalAlignment="Left" Margin="271,213,0,0" VerticalAlignment="Top" Width="245" Height="41" Click="Button_Click_2"/>
         <Button Content="Услуги" HorizontalAlignment="Left" Margin="271,264,0,0" VerticalAlignment="Top" Width="245" Height="41" Click="Button_Click_3"/>
+        <Button Content="Управление" HorizontalAlignment="Left" Margin="271,320,0,0" VerticalAlignment="Top" Width="245" Height="41" Click="Button_Click_3"/>
 
     </Grid>
 </Window>
